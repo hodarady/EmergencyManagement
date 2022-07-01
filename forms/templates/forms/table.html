@@ -1,0 +1,57 @@
+{% extends 'forms/index.html'%}
+    <!-- services section start-->
+
+    {% block content %}
+
+    <div class="p-4 submit d-flex w-100">
+        <form method="POST" action="search">
+            <div class="pos">
+                <input type="submit" value="بحث" />
+                <input type="text" name="NID" placeholder="بحث" class="search" />
+            </div>
+
+        </form>
+        <div class="con">
+            <a href="new_patient" class="link"><span>+</span> اضافة مريض جديد</a>
+        </div>
+    </div>
+
+    <table border="2px">
+        <tr>
+            <th>الرقم التعريفي</th>
+            <th>رقم الهوية</th>
+            <th>الاسم</th>
+            <th>العنوان</th>
+            <th>السن</th>
+            <th>وقت الوصول</th>
+            <th>رقم الغرفة</th>
+            <th>رقم الهاتف</th>
+            <th>النوع</th>
+            <th>وقت الخروج</th>
+            <th> تحديث بيانات</th>
+        </tr>
+
+        {% for patient in patients %}
+
+        <tr>
+            <td>{{patient.id}}</td>
+            <td>{{patient.nationalId}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.address}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.date}}</td>
+            <td>{{patient.roomNumber}}</td>
+            <td>{{patient.phonenumber}}</td>
+            <td>{{patient.gender}}</td>
+            <td>{{patient.exitDate}}</td>
+
+            {%if patient.exitDate %}
+              <td><a href="addExitTime" style='visibility :hidden' class="update">تحديث</a></td>
+            {% else %}
+              <td><a href="{% url 'editExitTime' patient.id  %}" class="update">اضافة وقت الخروج</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}

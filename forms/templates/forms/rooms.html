@@ -1,0 +1,109 @@
+{% extends 'forms/index.html'%}
+    <!-- services section start-->
+
+    {% block content %}
+
+
+    <section class="p-5 services mb-4" style = "margin-top : -2%">
+        <div class="container">
+          <div class="row">
+
+            {% for key , value in rooms.items %}
+                {% if value %} <!--  if room is empty -->
+                    <div class="col-lg-3">
+                      <div class="card ">
+                          <h4>{{key}}</h4>
+                        <img src='static/forms/img/door (3).png' alt="غرفه (1)" class="card-img-top w-50 ">
+
+                    </div>
+                                      </div>
+                {%else%}
+
+                  <div class="col-lg-3">
+                      <div class="card ">
+                        {{key}}
+                          <img src="static/forms/img/closed.png" alt="غرفه (2)" class="card-img-bottom w-50">
+
+                      </div>
+                    </div>
+              {%endif%}
+              {% endfor %}
+                <!-- <div class="col-lg-3">
+                    <div class="card ">
+                      3
+                        <img src="static/forms/img/door (3).png" alt="" class="card-img-bottom w-50">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card ">
+                      4
+                        <img src="static/forms/img/door (3).png" alt="" class="card-img-bottom w-50">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card ">
+                      5
+                        <img src="static/forms/img/door (3).png" alt="" class="card-img-bottom w-50">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card ">
+                      6
+                        <img src="static/forms/img/closed.png" alt="" class="card-img-bottom w-50">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card ">
+                      7
+                        <img src='static/forms/img/door (3).png' alt="" class="card-img-top w-50 ">
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card ">
+                      8
+                        <img src="static/forms/img/closed.png" alt="" class="card-img-bottom w-50">
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card ">
+                      9
+                        <img src="static/forms/img/closed.png" alt="" class="card-img-bottom w-50">
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card ">
+                      10
+                        <img src="static/forms/img/closed.png" alt="" class="card-img-bottom w-50">
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card ">
+                      11
+                        <img src="static/forms/img/closed.png" alt="" class="card-img-bottom w-50">
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card ">
+                      12
+                        <img src="static/forms/img/closed.png" alt="" class="card-img-bottom w-50">
+                    </div>
+                </div> -->
+
+            </div>
+
+        </div>
+    </section>
+{% endblock%}

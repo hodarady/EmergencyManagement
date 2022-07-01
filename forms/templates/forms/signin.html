@@ -1,0 +1,58 @@
+{% load static %}
+
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootsrap css file -->
+    <link rel="stylesheet" href="{% static 'forms/css/bootstrap.min.css' %}">
+    <!-- fontawesome css file -->
+    <link rel="stylesheet" href="{% static 'forms/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'forms/css/all.min.css' %}">
+    <!-- css file -->
+    <link rel="stylesheet" href="{% static 'forms/css/style.css' %}">
+    <title>قسم الطوارئ</title>
+
+</head>
+
+    <!-- form start-->
+    <!-- مرحبا بك فى نظام ادارة قسم الطوارئ -->
+
+    <div class="container-form login">
+        <div class="row m-0 h-100">
+            <div class="col p-0 text-center d-flex justify-content-center align-items-center display-none">
+                <img src="static/forms/img/Login-amico.svg" class="w-100">
+            </div>
+            <div class="col p-0 bg-custom d-flex justify-content-center align-items-center flex-column w-100">
+                <form class="w-75" method="POST">
+                  {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">الاسم</label>
+                        <input type="text" name = "username" class="form-control" id="exampleFormControlInput1" placeholder="اسم المستخدم" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput2" class="form-label">الرقم السري</label>
+                        <input type="password" name = "password" class="form-control" id="exampleFormControlInput2" placeholder="الرقم السري" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-custom btn-lg btn-block mt-3">تسجيل الدخول </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- form end -->
+
+    <!-- bootstrap js file -->
+    <script src="{% static 'forms/JS/bootstrap.min.js' %}"></script>
+    <script src="{% static 'forms/JS/all.min.js' %}"></script>
+</body>
+
+</html>

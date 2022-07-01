@@ -1,0 +1,49 @@
+
+{% extends 'forms/index.html'%}
+    <!-- services section start-->
+
+    {% block content %}
+    <section class="p-5 services mb-4">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card ">
+                        <img src='static/forms/img/Personal data-cuate.svg' alt="" class="card-img-top w-25 ">
+                        <div class="card-text">
+                            <h4><a href="new_patient"> إضافة مريض جديد</a></h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card ">
+                        <img src="static/forms/img/hospital-bed.png" alt="" class="card-img-bottom w-25">
+                        <div class="card-text">
+                            <h4><a href="new_resident"> إضافة مريض مقيم </a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card ">
+                        <img src="static/forms/img/kids-reading.png" alt="" class="card-img-bottom w-25">
+                        <div class="card-text">
+                            <h4><a href="display_patients"> عرض المرضى المتواجدين </a></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card ">
+                        <img src="static/forms/img/Hospital room-amico.svg" alt="" class="card-img-bottom w-25">
+                        <div class="card-text">
+                            <h4><a href="rooms">  الغرف المتاحه</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+  {% endblock %}

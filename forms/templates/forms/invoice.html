@@ -1,0 +1,143 @@
+{% load static%}
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قسم الطوارئ</title>
+
+    <!-- bootstrap css file  -->
+    <link rel="stylesheet" href="{% static 'forms/css/bootstrap.min.css' %}">
+    <!-- fontawesome css file  -->
+    <link rel="stylesheet" href="{% static 'forms/css/all.min.css' %}">
+    <!-- css file  -->
+    <link rel="stylesheet" href="{% static 'forms/css/invoice_style.css' %}">
+</head>
+
+<body>
+  <header class="header" dir="ltr">
+      <nav class="navbar navbar-expand-lg py-3  nav-bar">
+          <div class="container-fluid">
+              <span class="navbar-brand">
+                <!-- <form class="d-flex" style="margin-right: 90px;"> -->
+                    <a href="logout" > <button class="btn btn-secondary" type="submit"
+                     style="background-color:#b072b3 ; border-color: #b072b3;">
+                     <!--<span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>-->تسجيل الخروج</button>
+                <!-- </form> -->
+              </a>
+
+              </span>
+
+              <span class="navbar-brand" style = "margin-left : 6%; ">
+                  <a href=""><img src="static/forms/img/logo.png" class="img-fluid w-50" alt="logo"></a>
+      </span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa-solid fa-bars-staggered navbar-toggler-icon"></i>
+          </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                  <ul class="navbar-nav menu-navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="invoice">استخراج فاتوره</a>
+                    </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="showProfileInfo">عرض الملف الشخصي</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="services">الرئيسيه</a>
+                      </li>
+
+
+                  </ul>
+
+              </div>
+          </div>
+      </nav>
+  </header>
+    <div class="container">
+      <div><br><br><br></div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 body-main">
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <div class="col-md-12 text-center">
+                            <h4 style="color: #6a2c86"><strong>فاتورة مريض</strong></h4>
+                            <hr>
+                            <div class=" serial_number col-md-12">
+                              <form method="POST">
+                                <label for="text" class="serial">الرقم التعريفي:</label>
+                                <input type="text" name = "NID" class="input" class="form-control" name="text" placeholder="" required="required">
+                              </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <br />
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-md-9">اسم المريض</td>
+                                <td class="col-md-3">{{patient.name}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-9">العنوان</td>
+                                <td class="col-md-3">{{patient.address}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-9">النوع</td>
+                                <td class="col-md-3">{{patient.gender}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-9">العمر</td>
+                                <td class="col-md-3">{{patient.age}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right">
+
+                                    <p><b>تاريخ استخراج الفاتوره :</p>
+
+                                    </td>
+                                    <td>
+                                        <p>
+                                            <strong>{{current_date}}</strong>
+                                        </p>
+
+                                    </td>
+                                </tr>
+                                <tr style="color: #6a2c86">
+                                    <td class="text-right">
+                                        <h5>المبلغ المستحق :</h5>
+                                    </td>
+                                    <td class="text-left">
+                                        <h5> 200 جنيها </h5>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="col-md-12">
+                            <!--<p><b>تاريخ استخراج الفاتوره :</b> 12 \ 2 \ 2020</p>-->
+                                    <button type="submit" class="btn btn-primary" style="margin-left: 3%;"> طباعة الفاتوره </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="{% static 'forms/JS/bootstrap.min.js' %}"></script>
+    <script src="{% static 'forms/JS/all.min.js' %}"></script>
+    </body>
+
+    </html>

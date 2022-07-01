@@ -1,0 +1,226 @@
+{% load static%}
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>قسم الطوارئ</title>
+
+    <!-- bootstrap css file  -->
+    <link rel="stylesheet" href="{% static 'forms/css/bootstrap.min.css' %}">
+    <!-- fontawesome css file  -->
+    <link rel="stylesheet" href="{% static 'forms/css/all.min.css' %}">
+    <!-- css file  -->
+    <link rel="stylesheet" href="{% static 'forms/css/style_add.css'%}">
+</head>
+
+
+
+  {% if submitted %}
+  <center>
+    <br><br><br>
+  <h1>
+  تمت اضافه المريض بنجاح
+  </h1>
+  <div class="col-12">
+      <a href="new_patient"> <button type="submit" class="btn btn-primary btn-lg"> اضافه مريض اخر</button></a>
+  </div>
+{% else %}
+
+<body>
+  <!-- nav-bar start-->
+  <header class="header" dir="ltr">
+      <nav class="navbar navbar-expand-lg py-3  nav-bar">
+          <div class="container-fluid">
+              <span class="navbar-brand">
+                <!-- <form class="d-flex" style="margin-right: 90px;"> -->
+                    <a href="logout" > <button class="btn btn-secondary" type="submit"
+                     style="background-color:#b072b3 ; border-color: #b072b3;">
+                     <!--<span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>-->تسجيل الخروج</button>
+                <!-- </form> -->
+              </a>
+
+              </span>
+
+              <span class="navbar-brand">
+                  <a href=""><img src="static/forms/img/logo.png" class="img-fluid w-50" alt="logo"></a>
+          </span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa-solid fa-bars-staggered navbar-toggler-icon"></i>
+          </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                  <ul class="navbar-nav menu-navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="invoice">استخراج فاتوره</a>
+                    </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="showProfileInfo">عرض الملف الشخصي</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="services">الرئيسيه</a>
+                      </li>
+
+
+                  </ul>
+
+              </div>
+          </div>
+      </nav>
+  </header>
+  <div class="row m-0 h-100">
+      <div class="col p-0 bg-custom d-flex justify-content-center align-items-center flex-column w-100">
+          <div class="signup-form m-md-5" style="width: 600px; height: 670px;">
+              <form action="" method="post" class="row g-3" style="margin-top:-12%;">
+
+                  <h3 style="text-align: center;">إضافة مريض جديد</h3>
+
+
+                    <div class=" col-12">
+                        <label for="name">اسم المريض</label>
+                        <input type="text" class="form-control" name="name" placeholder="أسم المريض" maxlength="100" required id="id_name">
+                    </div>
+
+                    <div class=" col-12">
+                        <label for="nationalId"> الرقم القومي </label>
+                        <input type="text" class="form-control" name="nationalId" placeholder="" required="required">
+                    </div>
+
+                    <!-- <div class=" col-12">
+                        <label for="drdep"> وحدة الاستاذ الدكتور </label>
+                        <input type="text" name="drdep" class="form-control" placeholder="وحدة الاستاذ الدكتور" maxlength="100" required id="id_drdep">
+                    </div> -->
+
+
+                    <div class=" col-12">
+                        <label for="age"> عمر المريض</label>
+                        <input type="text" name="age" class="form-control" placeholder="عمر المريض" required id="id_age">
+                    </div>
+
+                    <div class=" col-12">
+                        <label for="address">عنوان المريض</label>
+                        <input type="text" name="address" value="عبدالسلام عارف" class="form-control" placeholder="العنوان" maxlength="100" required id="id_address">
+                    </div>
+
+                    <div class=" col-12">
+                        <label for="roomNumber">رقم الغرفة</label>
+                        <input type="text" name="roomNumber" class="form-control" placeholder="رقم الغرفه" required id="id_roomNumber">
+                    </div>
+
+
+                    <!-- <div class=" col-12">
+                        <label for="department">القسم المحول اليه</label>
+                        <input type="text" name="department" class="form-control" placeholder=" القسم المحول أليه" maxlength="100" required id="id_department">
+                    </div> -->
+
+                    <!-- <div class=" col-12">
+                        <label for="Diagnosis">التشخيص</label>
+                        <input type="text" name="Diagnosis" class="form-control" placeholder="التشخيص" maxlength="100" required id="id_Diagnosis">
+                    </div> -->
+
+
+                    <div class=" col-md-6">
+                        <label for="gender">النوع</label>
+                        <select class="form-control" name="gender" id="exampleFormControlSelect1">
+                                <option selected style="color: #656769;"></option>
+                                    <option>ذكر</option>
+                                    <option>انثي</option>
+                                    </select>
+
+                  </div>
+
+                  <div class=" col-md-6">
+                      <label for="phonenumber">رقم الهاتف</label>
+                      <input type="text" name="phonenumber" class="form-control" placeholder="رقم الهاتف" maxlength="100" required id="id_phonenumber">
+                  </div>
+
+
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-lg"> إضافه</button>
+                    </div>
+                </form>
+
+                <!-- end of form code-->
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+{%endif%}
+<footer class="text-center text-white fixed-bottom" style="background-color: #f1f1f1;">
+  <!-- Grid container -->
+  <div class="container pt-4 ">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MuhammedAshraf</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+<script src="{% static 'forms/JS/bootstrap.min.js' %}"></script>
+<script src="{% static 'forms/JS/all.min.js' %}"></script>
+</body>
